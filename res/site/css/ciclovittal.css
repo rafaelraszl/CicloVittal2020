@@ -106,6 +106,16 @@ header #logotipo {
     -moz-box-shadow:    9px 7px 5px rgba(50, 50, 50, 0.77);
     box-shadow:         9px 7px 5px rgba(50, 50, 50, 0.77);
 }
+#menu li a.restrito:hover {
+	background: red;
+	color: white;
+	border-style: none;
+	border-radius: 100px;
+	transition: all 0.3s linear;
+	-webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+    -moz-box-shadow:    9px 7px 5px rgba(50, 50, 50, 0.77);
+    box-shadow:         9px 7px 5px rgba(50, 50, 50, 0.77);
+}
 #banner {
 	width: 100%;
 	height: auto;
