@@ -43,6 +43,13 @@
               <span id="spcontando3">Nenhum caractere digitado</span><br />
               <span id="sprestante3">Você ainda pode digitar 3100 caracteres</span>
             </div>
+
+            <div class="form-group">
+              <label for="criado">Criado em: <?php echo formatDate($blog["created"]); ?></label> <!-- <span id='alert' style="font-weight: bold; color: #f00"></span> -->
+              <!-- <input type="text" class="form-control" id="criado" name="criado"><?php echo formatDate($blog["created"]); ?></input> -->
+            </div>
+
+
           </div>
 
           <!-- /.box-body -->

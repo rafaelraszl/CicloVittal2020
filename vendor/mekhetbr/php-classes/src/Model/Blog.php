@@ -11,7 +11,7 @@ class Blog extends Model {
 	const SESSION = "Blog";
 
 	protected $fields = [
-		"id", "title", "body", "created", "modified", "preview"
+		"idpost", "title", "body", "created", "preview"
 	];
 
 	public static function listBlog()
@@ -41,7 +41,7 @@ class Blog extends Model {
 			":preview"=>$this->getpreview()
 		));
 
-		var_dump($results);
+		
 
 		$this->setData($results[0]);
 	}
@@ -57,6 +57,9 @@ class Blog extends Model {
 
 		$data = $results[0];
 
+		// var_dump($results);
+		// exit;
+
 		/*$data['title'] = utf8_encode($data['title']);*/
 
 		$this->setData($data);
@@ -68,15 +71,17 @@ class Blog extends Model {
 
 		$sql = new Sql();
 
-		$results = $sql->select("CALL sp_blogupdate_save(:idpost, :title, :body, :preview", array(
+		$results = $sql->select("CALL sp_blogupdate_save(:idpost, :title, :body, :preview, :created)", array
+			(
 			":idpost"=>$this->getidpost(),
 			":title"=>$this->gettitle(),
 			":body"=>$this->getbody(),
-			":preview"=>$this->getpreview()
+			":preview"=>$this->getpreview(),
+			":created"=>$this->getcreated()
 		));
 
-		var_dump($results);
-		exit;
+		// var_dump($results);
+		// exit;
 
 		$this->setData($results[0]);		
 	}

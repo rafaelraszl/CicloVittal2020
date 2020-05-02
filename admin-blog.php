@@ -118,11 +118,13 @@ $app->post('/admin/blog/:idpost', function($idpost){
 
 	$blog = new Blog();
 
+	$_POST["inadmin"] = (isset($_POST["inadmin"]))?1:0;
+
 	$blog->get((int)$idpost);
 
 	$blog->setData($_POST);
 
-	$blog->update();
+	$blog->update($idpost);
 
 	/*if($_FILES["file"]["name"] !== "") $blog->setPhoto($_FILES["file"]);
 
